@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Start Job asdtest'
+                build quietPeriod: 5, job: 'asdtest'
+                echo 'Finish Job asdtest'
+            }
+        }
+        stage('Release') {
+            steps {
+                echo 'Inside Release Stage'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Inside Build Stage'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Inside Deploy Stage'
+            }
+        }
+    }
+}
